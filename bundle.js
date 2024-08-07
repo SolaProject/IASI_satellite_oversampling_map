@@ -997,7 +997,28 @@ var station = L.geoJSON(
     staInfo,
     {
         onEachFeature: function (feature, layer) {
-            layer.bindPopup(feature.properties.index);
+            var index = String(feature.properties.index);
+            var lon = feature.properties.longitude.toFixed(3);
+            var lat = feature.properties.latitude.toFixed(3);
+            layer.bindPopup(
+                `
+                <table>
+                <tbody>
+                    <tr>
+                    <td><b>Station ID: </b></td>
+                    <td>${index}</td>
+                    </tr>
+                    <tr>
+                    <td><b>Longitude: </b></td>
+                    <td>${lon}</td>
+                    </tr>
+                    <td><b>Latitude: </b></td>
+                    <td>${lat}</td>
+                    </tr>
+                </tbody>
+                </table>
+                `
+            );
         }
     }
 );
