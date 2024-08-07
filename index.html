@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>MAP TEST</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css" />
+    <script src="node_modules/leaflet/dist/leaflet.js"></script>
+    <script src="node_modules/leaflet.vectorgrid/dist/Leaflet.VectorGrid.bundled.js"></script>
+    <script type="text/javascript" src='node_modules/leaflet.chinatmsproviders/src/leaflet.ChineseTmsProviders.js'></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" />
+    <!-- <script src="node_modules/js-colormap/js-colormaps.js"></script> -->
+    <script
+      type="text/javascript"
+      src="node_modules/jquery/dist/jquery.js"
+    ></script>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      .leaflet-container {
+        height: 400px;
+        width: 600px;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    </style>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      #map {
+        height: 100%;
+        width: 100vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script src="./bundle.js"></script>
+  </body>
+</html>
