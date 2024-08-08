@@ -177,6 +177,10 @@ const winter_r = partial('winter_r');
 Define auxiliary functions for evaluating colormaps
  */
 
+export function is_cmap(name) {
+  return (name in data);
+}
+
 export function evaluate_cmap(x, name, reverse) {
   /**
    * Evaluate colormap `name` at some value `x`.
