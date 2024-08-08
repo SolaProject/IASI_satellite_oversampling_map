@@ -10,7 +10,7 @@ var opacity = 0.8;
 var scale = "normal";
 var normalize = new Normalize(vmin, vmax);
 
-function get_style_config() {
+function update_style_config() {
   if (document.getElementById("vmin")) {
     vmin = Number(document.getElementById("vmin").value);
   };
@@ -47,7 +47,7 @@ function get_style_config() {
 }
 
 function vectorTileLayerStyles(properties) {
-  normalize, cmap, opacity, reverse = get_style_config();
+  // normalize, cmap, opacity, reverse = get_style_config();
   return {
     fill: true,
     fillColor: evaluate_cmap_hex(
@@ -217,9 +217,7 @@ info.update = function (props) {
       : "鼠标悬停网格区域显示相关信息");
 };
 info.addTo(map);
-var layerControl = L.control.layers(baseLayers, overlays).addTo(map);
 
-// 创建弹出框内容
 var input = document.createElement("div");
 input.innerHTML = `
     <table>
@@ -228,30 +226,30 @@ input.innerHTML = `
             <td><b>vmin: </b></td>
             <td><input type="text" id="vmin" value=${String(
               vmin
-            )} style="width:40px" /></td>
+            )} style="width:60px" /></td>
         </tr>
         <tr>
             <td><b>vmax: </b></td>
             <td><input type="text" id="vmax" value=${String(
               vmax
-            )} style="width:40px" /></td>
+            )} style="width:60px" /></td>
         </tr>
         <tr>
             <td><b>opacity: </b></td>
             <td><input type="text" id="opacity" value=${String(
               opacity
-            )} style="width:40px" /></td>
+            )} style="width:60px" /></td>
         </tr>
         <tr>
             <td><b>cmap: </b></td>
             <td><input type="text" id="cmap" value=${String(
               cmap
-            )} style="width:40px" /></td>
+            )} style="width:60px" /></td>
         </tr>
         <tr>
             <td><b>scale: </b></td>
             <td>
-              <input type="radio" name="scale" value="normal" checked="checked" style="width:10px" />normal
+              <input type="radio" name="scale" value="normal" checked="checked" style="width:10px" />linear
             </td>
         </tr>
         <tr>
@@ -270,8 +268,13 @@ input.innerHTML = `
     </table>
 `;
 var button = document.createElement("button");
-button.innerHTML = "刷新";
+button.innerHTML = "Refresh";
 button.onclick = function () {
+  update_layer()
+};
+
+function update_layer() {
+  update_style_config()
   if (gridLayer_am._map) {
     gridLayer_am.removeFrom(map);
     gridLayer_am.addTo(map);
@@ -281,7 +284,8 @@ button.onclick = function () {
     gridLayer_pm.addTo(map);
   };
   legend.update();
-};
+}
+
 // 创建一个图层
 var gridLayer_style_config = L.control();
 gridLayer_style_config.onAdd = function (map) {
@@ -291,6 +295,12 @@ gridLayer_style_config.onAdd = function (map) {
   return this._div;
 };
 gridLayer_style_config.addTo(map);
+// document.onkeydown = function (e) {
+//   if (e.keyCode == '90') {
+//     update_layer();
+//   }
+// }
+var layerControl = L.control.layers(baseLayers, overlays).addTo(map);
 
 function highlightFeature(e) {
   //更新信息
@@ -362,7 +372,7 @@ legend.onAdd = function (map) {
 };
 legend.update = function () {
   this._div.innerHTML = '';
-  normalize, cmap, opacity, reverse = get_style_config();
+  // normalize, cmap, opacity, reverse = update_style_config();
   var n = 11;
   for (var i=0;i<n;i++) {
     var x = i/(n-1);
