@@ -1,6 +1,7 @@
 import { evaluate_cmap_hex, is_cmap } from "../my_modules/js-colormap/js-colormaps";
 import { Normalize, LogNorm } from "../my_modules/js-normalize/js-normalize";
 import * as staInfo from "./data/site-total.json";
+import * as point_source from "./data/point_source.json";
 
 var cmap = "jet";
 var reverse = false;
@@ -154,6 +155,56 @@ var station = L.geoJSON(staInfo, {
   },
 });
 
+var points = L.geoJSON(point_source, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng, {
+      radius: 8,
+      fillColor: "#d54035",
+      color: "#000",
+      weight: 1,
+      opacity: 1,
+      fillOpacity: 0.8
+    })
+  },
+  onEachFeature: function (feature, layer) {
+    var index = String(feature.properties.index);
+    var lon = feature.properties.longitude.toFixed(3);
+    var lat = feature.properties.latitude.toFixed(3);
+    var name = feature.properties.Name;
+    var emission = feature.properties.Emission;
+    if (emission != null) {
+      emission = emission.toFixed(3);
+    }
+    layer.bindPopup(
+      `
+                <table>
+                <tbody>
+                <tr>
+                <td><b>Source ID: </b></td>
+                <td>${index}</td>
+                </tr>
+                <tr>
+                <td><b>Name: </b></td>
+                <td>${name}</td>
+                </tr>
+                <tr>
+                <td><b>Longitude: </b></td>
+                <td>${lon}</td>
+                </tr>
+                <td><b>Latitude: </b></td>
+                <td>${lat}</td>
+                </tr>
+                </tr>
+                <td><b>Emission: </b></td>
+                <td>${emission}</td>
+                </tr>
+                </tbody>
+                </table>
+                `
+    );
+  },
+});
+
 var osm_map = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
   attribution: "© OpenStreetMap",
@@ -193,13 +244,20 @@ const overlays = {
   nh3_total_column_pm: gridLayer_pm,
   grid_line: gridLayer_line,
   station: station,
+  point_source: points,
 };
 
 //创建地图
 const map = L.map("map", {
   center: [39, 117],
   zoom: 7,
-  layers: [ESRI, gridLayer_am, gridLayer_line, station],
+  layers: [
+    ESRI,
+    gridLayer_am,
+    gridLayer_line,
+    station,
+    points,
+  ],
 });
 //鼠标悬浮显示网格信息
 var info = L.control();
