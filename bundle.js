@@ -304,8 +304,8 @@ class LogNorm extends Normalize {
     }
 }
 
-var type$1 = "FeatureCollection";
-var features$1 = [
+var type$2 = "FeatureCollection";
+var features$2 = [
 	{
 		type: "Feature",
 		properties: {
@@ -938,19 +938,19 @@ var features$1 = [
 	}
 ];
 var siteTotal = {
-	type: type$1,
-	features: features$1
+	type: type$2,
+	features: features$2
 };
 
 var staInfo = /*#__PURE__*/Object.freeze({
   __proto__: null,
   default: siteTotal,
-  features: features$1,
-  type: type$1
+  features: features$2,
+  type: type$2
 });
 
-var type = "FeatureCollection";
-var features = [
+var type$1 = "FeatureCollection";
+var features$1 = [
 	{
 		type: "Feature",
 		properties: {
@@ -9137,13 +9137,579 @@ var features = [
 	}
 ];
 var point_source = {
-	type: type,
-	features: features
+	type: type$1,
+	features: features$1
 };
 
 var point_source$1 = /*#__PURE__*/Object.freeze({
   __proto__: null,
   default: point_source,
+  features: features$1,
+  type: type$1
+});
+
+var type = "FeatureCollection";
+var features = [
+	{
+		type: "Feature",
+		properties: {
+			index: 32,
+			code_name: "Beiliuzhen",
+			Name: "山西北留镇北留化工园区",
+			longitude: 112.607,
+			latitude: 35.468,
+			corr: 1,
+			info: "北留镇的一个工业园区"
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				112.607,
+				35.468
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 71,
+			code_name: "Dongping_Ammonia_Phase_II",
+			Name: "山东东平县彭集街道瑞星工业园",
+			longitude: 116.453,
+			latitude: 35.882,
+			corr: 1,
+			info: null
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				116.453,
+				35.882
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 102,
+			code_name: "Hebei_Yangmei_Zhengyuan_Ammonia_Plant_402",
+			Name: "阳煤集团石家庄正元化肥有限公司",
+			longitude: 114.387,
+			latitude: 38.314,
+			corr: 1,
+			info: null
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				114.387,
+				38.314
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 104,
+			code_name: "Henan_Jindadi_Ammonia_Plant 1",
+			Name: "河南金大地化工有限责任公司",
+			longitude: 113.614,
+			latitude: 33.425,
+			corr: 1,
+			info: null
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				113.614,
+				33.425
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 376,
+			code_name: "Henan_Jindadi_Ammonia_Plant 2",
+			Name: "河南金大地化工有限责任公司",
+			longitude: 113.637,
+			latitude: 33.43,
+			corr: 1,
+			info: null
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				113.637,
+				33.43
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 105,
+			code_name: "Henan_Jinkai_531",
+			Name: "河南晋开集团",
+			longitude: 114.473,
+			latitude: 34.767,
+			corr: 1,
+			info: null
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				114.473,
+				34.767
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 106,
+			code_name: "Henan_Zhongxin_Chemical_Works",
+			Name: "河南新乡中新化工",
+			longitude: 113.634,
+			latitude: 35.25,
+			corr: 1,
+			info: null
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				113.634,
+				35.25
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 127,
+			code_name: "Jiaocheng",
+			Name: "山西交城县夏家营镇义望村工业园区",
+			longitude: 112.194,
+			latitude: 37.572,
+			corr: 1,
+			info: "硝基肥园区"
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				112.194,
+				37.572
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 132,
+			code_name: "Jiutai_Linyi_MEG_Plant_252",
+			Name: "山东久泰能源工业气体有限责任公司",
+			longitude: 118.258,
+			latitude: 35.022,
+			corr: 1,
+			info: "看上去现在好像拆掉了"
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				118.258,
+				35.022
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 158,
+			code_name: "Linyi_35",
+			Name: "施可丰",
+			longitude: 118.464,
+			latitude: 34.944,
+			corr: 1,
+			info: null
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				118.464,
+				34.944
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 377,
+			code_name: "Linyi",
+			Name: "中化山东肥业有限公司",
+			longitude: 118.457,
+			latitude: 34.946,
+			corr: 1,
+			info: "施可丰旁边"
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				118.457,
+				34.946
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 177,
+			code_name: "Nailun_Hohhot_Ammonia_Plant_294",
+			Name: "呼和浩特奈伦集团天润化肥",
+			longitude: 111.286,
+			latitude: 40.049,
+			corr: 1,
+			info: "距离市中心挺远的"
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				111.286,
+				40.049
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 206,
+			code_name: "Pingsongxiang",
+			Name: "平松乡阳煤集团和顺化工",
+			longitude: 113.635,
+			latitude: 37.287,
+			corr: 1,
+			info: null
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				113.635,
+				37.287
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 242,
+			code_name: "Shanxi_Ammonia_Plant",
+			Name: "山西潞安化工天脊集团",
+			longitude: 113.277,
+			latitude: 36.319,
+			corr: 1,
+			info: null
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				113.277,
+				36.319
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 372,
+			code_name: null,
+			Name: "山西潞安焦化二分厂",
+			longitude: 113.045,
+			latitude: 36.452,
+			corr: 1,
+			info: null
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				113.045,
+				36.452
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 373,
+			code_name: null,
+			Name: "山西潞安焦化一分厂",
+			longitude: 113.032,
+			latitude: 36.449,
+			corr: 1,
+			info: null
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				113.032,
+				36.449
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 374,
+			code_name: null,
+			Name: "山西潞宝集团晋钢兆丰煤化工有限公司",
+			longitude: 113.113,
+			latitude: 36.46,
+			corr: 1,
+			info: null
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				113.113,
+				36.46
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 375,
+			code_name: null,
+			Name: "山西潞安煤基合成油有限公司？",
+			longitude: 112.851,
+			latitude: 36.364,
+			corr: 1,
+			info: "位置准确"
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				112.851,
+				36.364
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 248,
+			code_name: "Shenzhou_Ethylene_Glycol_Plant",
+			Name: "河北深州阳煤集团乙二醇",
+			longitude: 115.529,
+			latitude: 38.005,
+			corr: 1,
+			info: null
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				115.529,
+				38.005
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 378,
+			code_name: "Shenzhou_Ethylene_Glycol_Plant",
+			Name: "河北深州阳煤集团乙二醇",
+			longitude: 115.522,
+			latitude: 37.834,
+			corr: 1,
+			info: null
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				115.522,
+				37.834
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 253,
+			code_name: "Shouguang_36",
+			Name: "寿光侯镇化工产业园",
+			longitude: 119.038,
+			latitude: 37.073,
+			corr: 1,
+			info: "一大片化工企业"
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				119.038,
+				37.073
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 254,
+			code_name: "Shuizhaizhen_37",
+			Name: "水寨镇产业园",
+			longitude: 117.452,
+			latitude: 36.899,
+			corr: 1,
+			info: null
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				117.452,
+				36.899
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 258,
+			code_name: "Sinopec_Qilu_Syngas_Plant_608",
+			Name: "中石化齐鲁合成气工厂",
+			longitude: 118.265,
+			latitude: 36.794,
+			corr: 1,
+			info: null
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				118.265,
+				36.794
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 268,
+			code_name: "Taiyuan_Ammonia_Plant",
+			Name: "太化工业园区",
+			longitude: 112.473,
+			latitude: 37.769,
+			corr: 1,
+			info: "已经变成工业遗产了"
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				112.473,
+				37.769
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 274,
+			code_name: "Tianye_Huhehaote_Ammonia_Plant_403",
+			Name: "（天野）中国石油呼和浩特石化",
+			longitude: 111.748,
+			latitude: 40.734,
+			corr: 1,
+			info: "改名了"
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				111.748,
+				40.734
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 299,
+			code_name: "Xiangfen_80",
+			Name: "山西襄汾光大焦化气源有限公司",
+			longitude: 111.404,
+			latitude: 35.91,
+			corr: 1,
+			info: "地址还算准"
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				111.404,
+				35.91
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 302,
+			code_name: "Xiaoyi_81",
+			Name: "孝义市兴安化工有限公司",
+			longitude: 111.849,
+			latitude: 37.087,
+			corr: 1,
+			info: "算是一片区域？"
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				111.849,
+				37.087
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 315,
+			code_name: "Yangquan_Qingxu_Ammonia_Plant",
+			Name: "太原清徐县精细化工产业园",
+			longitude: 112.27,
+			latitude: 37.572,
+			corr: 1,
+			info: null
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				112.27,
+				37.572
+			]
+		}
+	},
+	{
+		type: "Feature",
+		properties: {
+			index: 325,
+			code_name: "Zezhou-Gaoping",
+			Name: "山西兰花煤化工有限公司",
+			longitude: 112.878,
+			latitude: 35.639,
+			corr: 1,
+			info: "位置相对准确，北边有个晋钢集团"
+		},
+		geometry: {
+			type: "Point",
+			coordinates: [
+				112.878,
+				35.639
+			]
+		}
+	}
+];
+var point_source_BHT_correct = {
+	type: type,
+	features: features
+};
+
+var point_source_correct = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  default: point_source_BHT_correct,
   features: features,
   type: type
 });
@@ -9344,9 +9910,66 @@ var points = L.geoJSON(point_source$1, {
   },
 });
 
+var points_correct = L.geoJSON(point_source_correct, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng, {
+      radius: 8,
+      fillColor: "#94c7c9",
+      color: "#000",
+      weight: 1,
+      opacity: 1,
+      fillOpacity: 0.8
+    })
+  },
+  onEachFeature: function (feature, layer) {
+    var index = String(feature.properties.index);
+    var lon = feature.properties.longitude.toFixed(3);
+    var lat = feature.properties.latitude.toFixed(3);
+    var name = feature.properties.Name;
+    var info = feature.properties.info;
+    layer.bindPopup(
+      `
+                <table>
+                <tbody>
+                <tr>
+                <td><b>Source ID: </b></td>
+                <td>${index}</td>
+                </tr>
+                <tr>
+                <td><b>Name: </b></td>
+                <td>${name}</td>
+                </tr>
+                <tr>
+                <td><b>Longitude: </b></td>
+                <td>${lon}</td>
+                </tr>
+                <td><b>Latitude: </b></td>
+                <td>${lat}</td>
+                </tr>
+                </tr>
+                <td><b>Info: </b></td>
+                <td>${info}</td>
+                </tr>
+                </tbody>
+                </table>
+                `
+    );
+  },
+});
+
 var osm_map = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
   attribution: "© OpenStreetMap",
+});
+
+var NASAGIBS_ViirsEarthAtNight2012 = L.tileLayer('https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/{time}/{tilematrixset}{maxNativeZoom}/{z}/{y}/{x}.{format}', {
+	attribution: 'Imagery provided by services from the Global Imagery Browse Services (GIBS), operated by the NASA/GSFC/Earth Science Data and Information System (<a href="https://earthdata.nasa.gov">ESDIS</a>) with funding provided by NASA/HQ.',
+  minZoom: 1,
+  maxZoom: 22,
+  maxNativeZoom: 8,
+  format: 'jpg',
+  time: '',
+  tilematrixset: 'GoogleMapsCompatible_Level'
 });
 
 var gaode_map = L.tileLayer(
@@ -9376,14 +9999,16 @@ const baseLayers = {
   高德地图: gaode_map,
   天地图: Tianditu_map,
   谷歌地图: google_map,
+  夜间灯光: NASAGIBS_ViirsEarthAtNight2012,
 };
 
 const overlays = {
   nh3_total_column_am: gridLayer_am,
   nh3_total_column_pm: gridLayer_pm,
   grid_line: gridLayer_line,
-  station: station,
-  point_source: points,
+  地面站点: station,
+  原始点源: points,
+  修正点源: points_correct,
 };
 
 //创建地图

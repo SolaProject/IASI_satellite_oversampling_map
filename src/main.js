@@ -2,6 +2,7 @@ import { evaluate_cmap_hex, is_cmap } from "../my_modules/js-colormap/js-colorma
 import { Normalize, LogNorm } from "../my_modules/js-normalize/js-normalize";
 import * as staInfo from "./data/site-total.json";
 import * as point_source from "./data/point_source.json";
+import * as point_source_correct from "./data/point_source_BHT_correct.json"
 
 var cmap = "jet";
 var reverse = false;
@@ -205,9 +206,66 @@ var points = L.geoJSON(point_source, {
   },
 });
 
+var points_correct = L.geoJSON(point_source_correct, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng, {
+      radius: 8,
+      fillColor: "#94c7c9",
+      color: "#000",
+      weight: 1,
+      opacity: 1,
+      fillOpacity: 0.8
+    })
+  },
+  onEachFeature: function (feature, layer) {
+    var index = String(feature.properties.index);
+    var lon = feature.properties.longitude.toFixed(3);
+    var lat = feature.properties.latitude.toFixed(3);
+    var name = feature.properties.Name;
+    var info = feature.properties.info;
+    layer.bindPopup(
+      `
+                <table>
+                <tbody>
+                <tr>
+                <td><b>Source ID: </b></td>
+                <td>${index}</td>
+                </tr>
+                <tr>
+                <td><b>Name: </b></td>
+                <td>${name}</td>
+                </tr>
+                <tr>
+                <td><b>Longitude: </b></td>
+                <td>${lon}</td>
+                </tr>
+                <td><b>Latitude: </b></td>
+                <td>${lat}</td>
+                </tr>
+                </tr>
+                <td><b>Info: </b></td>
+                <td>${info}</td>
+                </tr>
+                </tbody>
+                </table>
+                `
+    );
+  },
+});
+
 var osm_map = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
   attribution: "© OpenStreetMap",
+});
+
+var NASAGIBS_ViirsEarthAtNight2012 = L.tileLayer('https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/{time}/{tilematrixset}{maxNativeZoom}/{z}/{y}/{x}.{format}', {
+	attribution: 'Imagery provided by services from the Global Imagery Browse Services (GIBS), operated by the NASA/GSFC/Earth Science Data and Information System (<a href="https://earthdata.nasa.gov">ESDIS</a>) with funding provided by NASA/HQ.',
+  minZoom: 1,
+  maxZoom: 22,
+  maxNativeZoom: 8,
+  format: 'jpg',
+  time: '',
+  tilematrixset: 'GoogleMapsCompatible_Level'
 });
 
 var gaode_map = L.tileLayer(
@@ -237,14 +295,16 @@ const baseLayers = {
   高德地图: gaode_map,
   天地图: Tianditu_map,
   谷歌地图: google_map,
+  夜间灯光: NASAGIBS_ViirsEarthAtNight2012,
 };
 
 const overlays = {
   nh3_total_column_am: gridLayer_am,
   nh3_total_column_pm: gridLayer_pm,
   grid_line: gridLayer_line,
-  station: station,
-  point_source: points,
+  地面站点: station,
+  原始点源: points,
+  修正点源: points_correct,
 };
 
 //创建地图
